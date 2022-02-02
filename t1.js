@@ -1,3 +1,0 @@
-function r(params) {
-  return {};
-}
