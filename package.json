@@ -1,12 +1,15 @@
 {
-  "name": "nodeJS",
+  "name": "node-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Estudo da clean Architecture.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "João Vitor",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^16.0.4"
+  }
 }
