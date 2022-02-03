@@ -177,7 +177,7 @@ describe('Auth UseCase', () => {
     }
   })
 
-  it('Should throw if dependency throws', async () => {
+  it('Should throw if any dependency throws', async () => {
     const loadUserByEmailRepository = makeLoadUserByEmailRepository()
     const suts = [].concat(
       new AuthUseCase({
