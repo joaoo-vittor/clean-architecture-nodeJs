@@ -4,7 +4,7 @@
   "description": "Estudo da clean Architecture.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --silent --passWithNoTests --colors --noStackTrace",
+    "test": "jest --passWithNoTests --colors --noStackTrace",
     "test:unit": " npm test -- --watch -c jest-unit-config.js",
     "test:integration": " npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test -- --findRelatedTests",
