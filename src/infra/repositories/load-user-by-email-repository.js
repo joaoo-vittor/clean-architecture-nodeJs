@@ -1,15 +1,14 @@
 const { MissingParamError } = require('../../utils/errors')
+const MongoHelper = require('../helpers/mongo-helper')
 
 module.exports = class LoadUserByEmailRepository {
-  constructor (userModel) {
-    this.userModel = userModel
-  }
-
   async load (email) {
     if (!email) {
       throw new MissingParamError('email')
     }
-    const user = await this.userModel.findOne(
+    await MongoHelper.connect()
+    const db = await MongoHelper.db
+    const user = await db.collection('users').findOne(
       { email },
       {
         projection: {
@@ -17,6 +16,8 @@ module.exports = class LoadUserByEmailRepository {
         }
       }
     )
+
+    await MongoHelper.disconnect()
     return user
   }
 }
