@@ -1,6 +1,6 @@
-const loginRouter = require('../composers/login-router-composer')
-const expressRouterAdpter = require('../adpters/express-router-adpter')
+const LoginRouterComposer = require('../composers/login-router-composer')
+const { adapt } = require('../adpters/express-router-adpter')
 
 module.exports = (router) => {
-  router.post('/login', expressRouterAdpter.adapt(loginRouter))
+  router.post('/login', adapt(LoginRouterComposer.compose()))
 }
