@@ -3,8 +3,10 @@ const env = require('../../main/config/env')
 
 module.exports = {
   async connect () {
-    this.client = await MongoClient.connect(env.mongoURL, { useUnifiedTopology: true })
-    this.db = await this.client.db()
+    this.client = await MongoClient.connect(env.mongoURL,
+      { useNewUrlParser: true, useUnifiedTopology: true }
+    )
+    this.db = await this.client.db('myFirstDatabase')
   },
 
   async disconnect () {
